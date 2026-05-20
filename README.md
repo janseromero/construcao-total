@@ -6,6 +6,7 @@ Sistema para gestão da construção civil no Brasil, com foco em **gestão de o
 
 🚧 Em desenvolvimento — **Onda 1 implementada** (esqueleto de custo end-to-end).
 
+- **📘 Tutorial do usuário:** [docs/tutorial/README.md](docs/tutorial/README.md) — guia completo módulo a módulo
 - Escopo do MVP: [docs/planning/mvp.md](docs/planning/mvp.md)
 - Modelo de domínio: [docs/architecture/domain-model.md](docs/architecture/domain-model.md)
 - Plano da Onda 1: [docs/planning/onda-1.md](docs/planning/onda-1.md)
