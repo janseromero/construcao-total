@@ -1,0 +1,162 @@
+/*
+ * Construtor Total — base styles.
+ * Paleta inspirada em construção civil (ver docs/planning/mvp.md §3.4):
+ *   --concreto-* : cinzas neutros (superfícies, bordas).
+ *   --aco-*      : azul-acinzentado escuro (cabeçalhos, primário).
+ *   --epi-*      : amarelo segurança (CTA, atenção).
+ *   --terracota-*: acento quente (badges, marca).
+ *
+ * Personalidade: ferramenta industrial, densa, sóbria — sem gradiente
+ * colorido, sem glass morphism, sem vibe de "AI app".
+ */
+
+:root {
+  --concreto-50: #f5f5f4;
+  --concreto-100: #e7e5e4;
+  --concreto-200: #d6d3d1;
+  --concreto-400: #a8a29e;
+  --concreto-600: #57534e;
+  --concreto-800: #292524;
+  --concreto-900: #1c1917;
+
+  --aco-700: #34495e;
+  --aco-800: #2c3e50;
+  --aco-900: #1f2d3d;
+
+  --epi-400: #ffc107;
+  --epi-500: #f5a623;
+  --epi-600: #d4881a;
+
+  --terracota-500: #a0522d;
+  --vermelho-500: #c0392b;
+  --verde-600: #27ae60;
+
+  --font-sans:
+    'Inter', 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--concreto-50);
+  color: var(--concreto-900);
+  font-family: var(--font-sans);
+  font-size: 15px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 32px 24px 64px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--concreto-200);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-mark {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  background: var(--epi-500);
+  border: 2px solid var(--aco-800);
+  transform: rotate(45deg);
+}
+
+.brand-name {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--aco-800);
+}
+
+.badge {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 4px 10px;
+  background: var(--epi-500);
+  color: var(--concreto-900);
+  border: 1px solid var(--aco-800);
+}
+
+.hero {
+  padding: 48px 0 32px;
+  border-bottom: 1px solid var(--concreto-200);
+}
+
+.hero h1 {
+  font-size: 28px;
+  line-height: 1.25;
+  margin: 0 0 12px;
+  color: var(--aco-900);
+  letter-spacing: -0.01em;
+}
+
+.hero p {
+  margin: 0;
+  max-width: 720px;
+  color: var(--concreto-600);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 32px;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid var(--concreto-200);
+  border-top: 3px solid var(--aco-800);
+  padding: 20px;
+}
+
+.card h2 {
+  margin: 0 0 8px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--aco-800);
+}
+
+.card p {
+  margin: 0;
+  color: var(--concreto-600);
+  font-size: 14px;
+}
+
+.footer {
+  margin-top: 48px;
+  padding-top: 16px;
+  border-top: 1px solid var(--concreto-200);
+  color: var(--concreto-400);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
