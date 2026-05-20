@@ -1,4 +1,17 @@
+'use client';
+
+import Link from 'next/link';
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+
 export default function Home() {
+  const router = useRouter();
+  useEffect(() => {
+    if (typeof window !== 'undefined' && window.localStorage.getItem('ct_token')) {
+      router.replace('/app');
+    }
+  }, [router]);
+
   return (
     <main className="container">
       <header className="header">
@@ -12,9 +25,17 @@ export default function Home() {
       <section className="hero">
         <h1>Gestão de obra e custos para construção civil.</h1>
         <p>
-          Antes, durante e depois da obra. Orçamento, apropriação de custos, rateio por unidade
-          e margem real por apartamento — sem planilha paralela.
+          Antes, durante e depois da obra. Orçamento, apropriação de custos, rateio por unidade e
+          margem real por apartamento — sem planilha paralela.
         </p>
+        <div style={{ marginTop: 24, display: 'flex', gap: 12 }}>
+          <Link href="/signup" className="btn btn-primary">
+            Criar conta
+          </Link>
+          <Link href="/login" className="btn btn-ghost">
+            Entrar
+          </Link>
+        </div>
       </section>
 
       <section className="grid">
@@ -31,10 +52,6 @@ export default function Home() {
           <p>Custo rateado por unidade e margem contra o preço vendido.</p>
         </article>
       </section>
-
-      <footer className="footer">
-        <span>v0.1.0 — esqueleto do repositório</span>
-      </footer>
     </main>
   );
 }

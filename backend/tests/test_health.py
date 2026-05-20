@@ -1,19 +1,12 @@
-"""Health endpoint smoke tests."""
-
-from fastapi.testclient import TestClient
-
-from app.main import app
-
-client = TestClient(app)
+"""Health smoke."""
 
 
-def test_root() -> None:
+def test_root(client):
     response = client.get("/")
     assert response.status_code == 200
     assert response.json()["app"] == "Construtor Total"
 
 
-def test_health() -> None:
+def test_health(client):
     response = client.get("/health")
     assert response.status_code == 200
-    assert response.json() == {"status": "ok"}

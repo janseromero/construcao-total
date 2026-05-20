@@ -16,6 +16,7 @@ env/
 htmlcov/
 .coverage
 coverage.xml
+*.db
 
 # Node / Next.js
 node_modules/

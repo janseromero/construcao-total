@@ -4,7 +4,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.core.config import settings
-from app.routers import health
+from app.routers import analise, auth, catalogo, execucao, health, obras, orcamentos, rateio, vendas
 
 app = FastAPI(
     title="Construtor Total API",
@@ -21,6 +21,14 @@ app.add_middleware(
 )
 
 app.include_router(health.router)
+app.include_router(auth.router)
+app.include_router(obras.router)
+app.include_router(catalogo.router)
+app.include_router(orcamentos.router)
+app.include_router(execucao.router)
+app.include_router(rateio.router)
+app.include_router(analise.router)
+app.include_router(vendas.router)
 
 
 @app.get("/")
